@@ -1,0 +1,375 @@
+<!DOCTYPE html> <html lang="hi"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ExamQuizHub - CBT Mock Test</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head> <body> <header class="site-header">
+<h1>ExamQuizHub</h1>
+
+<p>Government Exam Mock Test</p>
+
+<p class="owner-name">
+    ✨ Created by <strong>Kamlesh Vishwakarma</strong>
+</p>
+
+</header> <section class="welcome-box">
+<h2>🎯 Exam की तैयारी शुरू करें</h2>
+
+<p>CBT Pattern Mock Test Practice</p>
+
+</section> <main>
+<!-- =========================
+     CATEGORY
+========================== -->
+
+<section id="categorySection">
+
+    <h2>📚 Exam Category</h2>
+
+    <div class="category-buttons">
+
+        <button onclick="selectCategory('SSC')">
+            SSC
+        </button>
+
+        <button onclick="selectCategory('Railway')">
+            Railway
+        </button>
+
+        <button onclick="selectCategory('Banking')">
+            Banking
+        </button>
+
+        <button onclick="selectCategory('UPSSSC')">
+            UPSSSC
+        </button>
+
+        <button onclick="selectCategory('Police')">
+            Police
+        </button>
+
+        <button onclick="selectCategory('Teaching')">
+            Teaching
+        </button>
+
+        <button onclick="selectCategory('Defence')">
+            Defence
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SSC EXAMS
+========================== -->
+
+<section id="sscSection" class="exam-selection" style="display:none;">
+
+    <h2>🇮🇳 SSC Exam चुनें</h2>
+
+    <div class="exam-buttons">
+
+        <button onclick="selectExam('SSC_CGL')">
+            SSC CGL
+        </button>
+       
+        <button onclick="selectExam('SSC_CHSL')">
+            SSC CHSL
+        </button>
+
+        <button onclick="selectExam('SSC_MTS')">
+            SSC MTS
+        </button>
+
+        <button onclick="selectExam('SSC_GD')">
+            SSC GD
+        </button>
+
+        <button onclick="selectExam('SSC_CPO')">
+            SSC CPO
+        </button>
+
+        <button onclick="selectExam('SSC_JE')">
+            SSC JE
+        </button>
+
+        <button onclick="selectExam('SSC_STENO')">
+            SSC Stenographer
+        </button>
+
+        <button onclick="selectExam('SSC_SELECTION_POST')">
+            SSC Selection Post
+        </button>
+
+    </div>
+
+</section>
+<!-- =========================
+     SSC CGL TIER SELECTION
+========================== -->
+
+<section id="cglTierSection"
+         class="exam-selection"
+         style="display:none;">
+
+    <h2>📚 SSC CGL Mock Test</h2>
+
+    <div class="exam-buttons">
+
+        <button onclick="selectTier('CGL_TIER_1')">
+            📝 SSC CGL Tier-I
+        </button>
+
+        <button onclick="selectTier('CGL_TIER_2')">
+            📝 SSC CGL Tier-II
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     EXAM INFO
+========================== -->
+
+<section id="examInfo" class="exam-info" style="display:none;">
+
+    <h2 id="selectedExamName">
+        Exam
+    </h2>
+
+    <div class="paper-details">
+
+        <div>
+            <span>📝 Questions</span>
+            <strong id="examQuestionCount">0</strong>
+        </div>
+
+        <div>
+            <span>⏱️ Time</span>
+            <strong id="examTime">0 मिनट</strong>
+        </div>
+
+        <div>
+            <span>➖ Negative Marking</span>
+            <strong>-0.25</strong>
+        </div>
+
+    </div>
+
+    <button
+        class="start-btn"
+        onclick="startQuiz()">
+
+        🚀 Start Paper
+
+    </button>
+
+    <button
+        class="back-btn"
+        onclick="goHome()">
+
+        ← Back
+
+    </button>
+
+</section>
+
+
+<!-- =========================
+     QUIZ
+========================== -->
+
+<section id="quizBox" style="display:none;">
+
+    <!-- TOP STATUS -->
+
+    <div class="top-status">
+
+        <div class="status-item">
+
+            🟢 Attempted
+
+            <strong id="topAttemptedCount">
+                0
+            </strong>
+
+        </div>
+
+        <div class="status-item">
+
+            ⚪ Not Attempted
+
+            <strong id="topNotAttemptedCount">
+                0
+            </strong>
+
+        </div>
+
+        <div class="status-item">
+
+            🔵 Current
+
+            <strong id="currentStatus">
+                1
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <!-- QUIZ HEADER -->
+
+    <div class="quiz-top">
+
+        <div>
+
+            📝 Question
+
+            <strong>
+
+                <span id="currentQuestion">
+                    1
+                </span>
+
+                /
+
+                <span id="totalQuestions">
+                    0
+                </span>
+
+            </strong>
+
+        </div>
+
+
+        <div>
+
+            ⏱️
+
+            <strong id="time">
+                15:00
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <!-- PROGRESS -->
+
+    <div id="progressBar">
+
+        <div id="progress"></div>
+
+    </div>
+
+
+    <!-- QUESTION -->
+
+    <h2 id="question">
+        Question
+    </h2>
+
+
+    <!-- OPTIONS -->
+
+    <div id="options"></div>
+
+
+    <!-- FEEDBACK -->
+
+    <div id="feedback"></div>
+
+
+    <!-- NAVIGATION -->
+
+    <div class="quiz-navigation">
+
+        <button
+            id="previousBtn"
+            onclick="previousQuestion()">
+
+            ← Previous
+
+        </button>
+
+
+        <button
+            id="nextBtn"
+            onclick="nextQuestion()">
+
+            Next →
+
+        </button>
+
+    </div>
+
+
+    <!-- QUESTION PALETTE -->
+
+    <div class="question-palette">
+
+        <h3>📌 Question Palette</h3>
+
+        <p>
+            🟢 Attempted
+            &nbsp;&nbsp;
+            ⚪ Not Attempted
+            &nbsp;&nbsp;
+            🔵 Current
+        </p>
+
+        <div id="questionPalette"></div>
+
+    </div>
+
+
+    <!-- SUBMIT -->
+
+    <button
+        id="submitBtn"
+        class="submit-btn"
+        onclick="submitQuiz()">
+
+        📝 Submit Paper
+
+    </button>
+
+</section>
+
+
+<!-- =========================
+     RESULT
+========================== -->
+
+<section id="resultBox" style="display:none;">
+
+    <h2>🎉 Quiz Complete!</h2>
+
+    <div id="score"></div>
+
+    <button
+        class="restart-btn"
+        onclick="restartQuiz()">
+
+        🔄 फिर से Quiz दें
+
+    </button>
+
+    <button
+        class="back-btn"
+        onclick="goHome()">
+
+        🏠 Home
+
+    </button>
+
+</section>
+
+</main> <script src="script.js"></script> </body> </html>
