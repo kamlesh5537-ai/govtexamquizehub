@@ -20,6 +20,17 @@ const examData = {
         questions: 10,
         time: 15
     },
+CHSL_TIER_1: {
+    name: "SSC CHSL Tier-I",
+    questions: 10,
+    time: 15
+},
+
+CHSL_TIER_2: {
+    name: "SSC CHSL Tier-II",
+    questions: 10,
+    time: 15
+},
 
     SSC_MTS: {
         name: "SSC MTS",
@@ -249,6 +260,9 @@ function selectExam(exam) {
     // =====================================
 
     if (exam === "SSC_CGL") {
+        
+        document.getElementById("chslTierSection")
+    .style.display = "none";
 
         // बाकी sections hide
         document.getElementById("sscSection")
@@ -263,8 +277,8 @@ function selectExam(exam) {
         document.getElementById("resultBox")
             .style.display = "none";
 
-document.querySelector(".welcome-box")
-    .style.display = "none";
+        document.querySelector(".welcome-box")
+            .style.display = "none";
 
         // Tier section show
         document.getElementById("cglTierSection")
@@ -279,6 +293,47 @@ document.querySelector(".welcome-box")
 
         return;
     }
+// =====================================
+// SSC CHSL
+// =====================================
+
+// =====================================
+// SSC CHSL
+// =====================================
+
+if (exam === "SSC_CHSL") {
+
+    // पहले बाकी sections hide करें
+    document.getElementById("sscSection")
+        .style.display = "none";
+
+    document.getElementById("examInfo")
+        .style.display = "none";
+
+    document.getElementById("quizBox")
+        .style.display = "none";
+
+    document.getElementById("resultBox")
+        .style.display = "none";
+
+    document.getElementById("cglTierSection")
+        .style.display = "none";
+
+
+    // CHSL Tier section दिखाएं
+    document.getElementById("chslTierSection")
+        .style.display = "block";
+
+
+    // CHSL Tier तक जाएं
+    document.getElementById("chslTierSection")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+
+    return;
+}
+
 
 
     // =====================================
@@ -899,5 +954,81 @@ function selectTier(tier) {
         alert("SSC CGL Tier-II Mock Test");
 
     }
+
+}
+// =========================================
+// SSC CHSL TIER SELECT
+// =========================================
+
+function selectCHSLTier(tier) {
+
+    document.getElementById("sscSection")
+        .style.display = "none";
+
+    document.getElementById("cglTierSection")
+        .style.display = "none";
+
+    document.getElementById("chslTierSection")
+        .style.display = "none";
+
+    document.getElementById("examInfo")
+        .style.display = "none";
+
+    document.getElementById("quizBox")
+        .style.display = "none";
+
+    document.getElementById("resultBox")
+        .style.display = "none";
+
+
+    const welcomeBox =
+        document.querySelector(".welcome-box");
+
+    if (welcomeBox) {
+        welcomeBox.style.display = "none";
+    }
+
+
+    if (tier === "CHSL_TIER_1") {
+
+        selectedExam = "CHSL_TIER_1";
+
+    }
+
+    if (tier === "CHSL_TIER_2") {
+
+        selectedExam = "CHSL_TIER_2";
+
+    }
+
+
+    const data = examData[selectedExam];
+
+    if (!data) {
+
+        alert("CHSL Tier data उपलब्ध नहीं है।");
+
+        return;
+    }
+
+
+    document.getElementById("selectedExamName")
+        .innerText = data.name;
+
+    document.getElementById("examQuestionCount")
+        .innerText = data.questions;
+
+    document.getElementById("examTime")
+        .innerText = data.time + " मिनट";
+
+
+    document.getElementById("examInfo")
+        .style.display = "block";
+
+
+    document.getElementById("examInfo")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
 
 }
