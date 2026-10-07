@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UPSSSC PET 7 September 2025 | ExamQuizHub</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,'Noto Sans Devanagari',sans-serif;background:#f3f6fa;color:#172033}.top{background:#173b6c;color:#fff;padding:14px 18px;display:flex;justify-content:space-between;align-items:center;gap:10px;position:sticky;top:0;z-index:10}.title{font-size:19px;font-weight:700}.timer{background:#fff;color:#c62828;padding:9px 14px;border-radius:8px;font-weight:700;font-size:18px}.wrap{max-width:1200px;margin:18px auto;padding:0 12px}.layout{display:grid;grid-template-columns:1fr 300px;gap:16px}.card{background:#fff;border-radius:10px;box-shadow:0 2px 10px #0001;padding:20px}.qhead{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #ddd;padding-bottom:12px}.qtext{font-size:20px;line-height:1.65;margin:18px 0}.option{display:block;border:1px solid #ccd4df;border-radius:8px;padding:12px;margin:10px 0;cursor:pointer;font-size:17px}.option:hover{background:#f0f6ff}.option input{margin-right:10px}.buttons{display:flex;justify-content:space-between;gap:10px;margin-top:20px}.btn{border:0;border-radius:7px;padding:11px 18px;cursor:pointer;font-weight:700}.prev{background:#e5e7eb}.next{background:#1769aa;color:#fff}.submit{background:#16803c;color:#fff}.palette{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin-top:12px}.num{height:40px;border:0;border-radius:6px;background:#e8edf3;cursor:pointer}.num.answered{background:#238636;color:#fff}.num.current{outline:3px solid #1769aa}.legend{font-size:13px;line-height:1.8;margin-top:12px}.result{display:none}.score{font-size:28px;font-weight:800;text-align:center;margin:15px}.stat{display:flex;justify-content:space-around;text-align:center;margin:15px 0}.stat b{display:block;font-size:24px}.warning{background:#fff7df;border-left:4px solid #e0a000;padding:10px;margin-bottom:15px;font-size:14px}.small{color:#667085;font-size:13px}@media(max-width:800px){.layout{grid-template-columns:1fr}.side{order:-1}.qtext{font-size:18px}.top{position:relative}.title{font-size:15px}}
+</style>
+</head>
+<body>
+<div class="top"><div class="title">ExamQuizHub — UPSSSC PET 7 September Paper</div><div class="timer" id="timer">120:00</div></div>
+<div class="wrap">
+<div class="warning">⏱️ परीक्षा समय: <b>120 मिनट</b> | सही उत्तर: +1 | गलत उत्तर: −0.25 | बिना उत्तर: 0</div>
+<div class="layout">
+<main class="card">
+<div id="quiz"></div>
+<div class="buttons"><button class="btn prev" onclick="prevQ()">← Previous</button><button class="btn next" onclick="nextQ()">Next →</button></div>
+</main>
+<aside class="card side"><b>Question Palette</b><div class="palette" id="palette"></div><div class="legend">🟢 उत्तर दिया<br>⬜ उत्तर नहीं दिया<br>🔵 वर्तमान प्रश्न</div><button class="btn submit" style="width:100%;margin-top:18px" onclick="submitQuiz()">Submit Test</button></aside>
+</div>
+<div class="card result" id="result"></div>
+</div>
+<script>
+const questions=[
+{q:'निम्नलिखित में से कौन प्रसिद्ध मधुबनी चित्रकार हैं?',o:['भारती दयाल','सुदर्शन कमाट','ऋषिकेश शर्मा','स्पूर्ति राव','इनमें से कोई नहीं'],a:0},
+{q:'भारत में थियोसोफिकल सोसाइटी के नेता कौन थे?',o:['एनी बेसेंट','एम. जी. रानाडे','गोपाल कृष्ण गोखले','बाल गंगाधर तिलक','इनमें से कोई नहीं'],a:0},
+{q:'1 Watt किसके बराबर होता है?',o:['1 कूलॉम','1 एम्पियर','1 सेकंड','1 जूल/सेकंड','इनमें से कोई नहीं'],a:3},
+{q:'निम्नलिखित में से कौन भारतीय मानसून को प्रभावित करता है?',o:['एल नीनो','ला नीना','हिमालय','उपरोक्त सभी'],a:3},
+{q:'भारतीय संविधान का अनुच्छेद 44 किससे संबंधित है?',o:['समान कार्य','समान शिक्षा','समान वेतन','समान नागरिक संहिता','इनमें से कोई नहीं'],a:3},
+{q:'भूमिगत चट्टानों की वे परतें जो भूजल को संग्रहित और संचारित करती हैं, उन्हें क्या कहा जाता है?',o:['बेसिन','जलभृत (Aquifer)','जल विभाजक क्षेत्र','आर्टीजियन कुआँ','इनमें से कोई नहीं'],a:1},
+{q:'दिसंबर 2024 में संयुक्त राज्य अमेरिका का राष्ट्रीय पक्षी किसे घोषित किया गया?',o:['American Robin','Peregrine Falcon','Bald Eagle','Golden Eagle','इनमें से कोई नहीं'],a:2},
+{q:'World Day to Combat Desertification and Drought 2025 की थीम क्या थी?',o:['Restoration. Land. Recovery.','United for Land. Our Legacy. Our Future.','Restore the Land. Unlock the Opportunities.','Her Land. Her Rights.','इनमें से कोई नहीं'],a:2}
+];
+let current=0, answers=Array(questions.length).fill(null), finished=false;
+function render(){let x=questions[current];document.getElementById('quiz').innerHTML=`<div class="qhead"><b>Question ${current+1} of ${questions.length}</b><span class="small">1 अंक</span></div><div class="qtext">${x.q}</div>${x.o.map((v,i)=>`<label class="option"><input type="radio" name="opt" value="${i}" ${answers[current]===i?'checked':''} onchange="choose(${i})"> ${String.fromCharCode(65+i)}) ${v}</label>`).join('')}`;renderPalette()}
+function choose(i){answers[current]=i;renderPalette()}
+function renderPalette(){document.getElementById('palette').innerHTML=questions.map((_,i)=>`<button class="num ${answers[i]!==null?'answered':''} ${i===current?'current':''}" onclick="go(${i})">${i+1}</button>`).join('')}
+function go(i){current=i;render()} function nextQ(){if(current<questions.length-1){current++;render()}else alert('यह अंतिम प्रश्न है। Submit पर क्लिक करें।')} function prevQ(){if(current>0){current--;render()}}
+function submitQuiz(){if(finished)return;if(!confirm('क्या आप टेस्ट Submit करना चाहते हैं?'))return;finished=true;let correct=0,wrong=0,skip=0;answers.forEach((v,i)=>{if(v===null)skip++;else if(v===questions[i].a)correct++;else wrong++});let score=correct-wrong*.25;document.querySelector('.layout').style.display='none';let r=document.getElementById('result');r.style.display='block';r.innerHTML=`<h2 style="text-align:center">🎉 Test Submitted</h2><div class="score">Score: ${score.toFixed(2)} / ${questions.length}</div><div class="stat"><div><b>${correct}</b>सही</div><div><b>${wrong}</b>गलत</div><div><b>${skip}</b>छोड़े</div></div><button class="btn next" style="display:block;margin:auto" onclick="location.reload()">फिर से शुरू करें</button>`;window.scrollTo(0,0)}
+let seconds=120*60;function tick(){if(finished)return;let m=Math.floor(seconds/60),s=seconds%60;document.getElementById('timer').textContent=String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');if(seconds<=0){submitQuiz()}else{seconds--;setTimeout(tick,1000)}}render();tick();
+</script>
+</body></html>

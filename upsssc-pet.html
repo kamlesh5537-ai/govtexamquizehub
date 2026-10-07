@@ -425,26 +425,37 @@
 
 
 <script>
+function openPaper(paper) {
 
-    function openPaper(paper) {
-
-        if (paper === '06-sep-25-S-1') {
-
-            window.location.href =
-                'upsssc-petp6-sep-25-s-1.html';
-
-        }
-
-        else {
-
-            alert(
-                'यह Question Paper अभी बनाया नहीं गया है।'
-            );
-
-        }
-
+    if (paper === '06-sep-25-S-1') {
+        window.location.href = 'upsssc-petp6-sep-25-s-1.html';
     }
 
+    else if (paper === '06-sep-25-S-2') {
+       window.location.href = 'upsssc-pet-6-sep-25-s2.html'
+    }
+
+    else if (paper === '07-sep-25-S-1') {
+        window.location.href = 'upsssc-pet-7-sep-25-s1.html';
+    }
+
+    else if (paper === '07-sep-25-S-2') {
+        alert('07 September 2025 Shift 2 का Question Paper अभी बनाया नहीं गया है।');
+    }
+
+    else if (paper === '2024-S-1') {
+        alert('2024 Shift 1 का Question Paper अभी बनाया नहीं गया है।');
+    }
+
+    else if (paper === '2024-S-2') {
+        alert('2024 Shift 2 का Question Paper अभी बनाया नहीं गया है।');
+    }
+
+    else {
+        alert('यह Question Paper अभी बनाया नहीं गया है।');
+    }
+
+}
 </script>
 
 
