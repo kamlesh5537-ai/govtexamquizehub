@@ -1,0 +1,454 @@
+```html
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>UPSSSC PET Papers | ExamQuizHub</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #222;
+        }
+
+        /* HEADER */
+
+        .header {
+            background: linear-gradient(135deg, #673ab7, #3f51b5);
+            color: white;
+            text-align: center;
+            padding: 30px 15px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 30px;
+        }
+
+        .header p {
+            margin: 8px 0 0;
+            font-size: 16px;
+        }
+
+        /* MAIN */
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 15px;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .title h2 {
+            color: #3f51b5;
+            margin-bottom: 8px;
+        }
+
+        .title p {
+            color: #555;
+        }
+
+        /* PAPER LIST */
+
+        .paper-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* PAPER CARD */
+
+        .paper-card {
+            background: white;
+            border-radius: 12px;
+            padding: 18px 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+
+            box-shadow:
+                0 4px 12px rgba(0,0,0,0.10);
+
+            transition: 0.3s;
+        }
+
+        .paper-card:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 7px 18px rgba(0,0,0,0.15);
+        }
+
+        /* PAPER INFORMATION */
+
+        .paper-info h3 {
+            margin: 0 0 8px;
+            color: #3f51b5;
+            font-size: 18px;
+        }
+
+        .paper-info p {
+            margin: 0;
+            color: #555;
+            font-size: 14px;
+        }
+
+        /* BUTTON */
+
+        .paper-btn {
+            border: none;
+
+            background: #3f51b5;
+            color: white;
+
+            padding: 11px 20px;
+
+            border-radius: 7px;
+
+            cursor: pointer;
+
+            font-size: 15px;
+
+            white-space: nowrap;
+        }
+
+        .paper-btn:hover {
+            background: #283593;
+        }
+
+        /* BACK BUTTON */
+
+        .back-btn {
+            display: block;
+
+            width: 180px;
+
+            margin: 30px auto;
+
+            padding: 12px;
+
+            text-align: center;
+
+            background: #222;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 7px;
+        }
+
+        .back-btn:hover {
+            background: #000;
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+
+            padding: 20px;
+
+            margin-top: 30px;
+
+            background: #222;
+
+            color: white;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            .paper-card {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .paper-btn {
+                width: 100%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header class="header">
+
+    <h1>UPSSSC PET</h1>
+
+    <p>
+        Previous Year Question Papers
+    </p>
+
+</header>
+
+
+
+<!-- MAIN -->
+
+<main class="container">
+
+
+    <div class="title">
+
+        <h2>📚 UPSSSC PET Question Papers</h2>
+
+        <p>
+            Date और Shift चुनकर Question Paper शुरू करें
+        </p>
+
+    </div>
+
+
+
+    <div class="paper-list">
+
+
+        <!-- PAPER 1 -->
+
+        <div class="paper-card">
+
+            <div class="paper-info">
+
+                <h3>
+                    UPSSSC PET — 06 September 2025 — Shift 1
+                </h3>
+
+                <p>
+                    Previous Year Question Paper
+                </p>
+
+            </div>
+
+            <button
+                class="paper-btn"
+                onclick="openPaper('06-sep-25-S-1')">
+
+                Start Paper
+
+            </button>
+
+        </div>
+
+
+
+        <!-- PAPER 2 -->
+
+        <div class="paper-card">
+
+            <div class="paper-info">
+
+                <h3>
+                    UPSSSC PET — 06 September 2025 — Shift 2
+                </h3>
+
+                <p>
+                    Previous Year Question Paper
+                </p>
+
+            </div>
+
+            <button
+                class="paper-btn"
+                onclick="openPaper('06-sep-25-S-2')">
+
+                Start Paper
+
+            </button>
+
+        </div>
+
+
+
+        <!-- PAPER 3 -->
+
+        <div class="paper-card">
+
+            <div class="paper-info">
+
+                <h3>
+                    UPSSSC PET — 07 September 2025 — Shift 1
+                </h3>
+
+                <p>
+                    Previous Year Question Paper
+                </p>
+
+            </div>
+
+            <button
+                class="paper-btn"
+                onclick="openPaper('07-sep-25-S-1')">
+
+                Start Paper
+
+            </button>
+
+        </div>
+
+
+
+        <!-- PAPER 4 -->
+
+        <div class="paper-card">
+
+            <div class="paper-info">
+
+                <h3>
+                    UPSSSC PET — 07 September 2025 — Shift 2
+                </h3>
+
+                <p>
+                    Previous Year Question Paper
+                </p>
+
+            </div>
+
+            <button
+                class="paper-btn"
+                onclick="openPaper('07-sep-25-S-2')">
+
+                Start Paper
+
+            </button>
+
+        </div>
+
+
+
+        <!-- PAPER 5 -->
+
+        <div class="paper-card">
+
+            <div class="paper-info">
+
+                <h3>
+                    UPSSSC PET — 2024 — Shift 1
+                </h3>
+
+                <p>
+                    Previous Year Question Paper
+                </p>
+
+            </div>
+
+            <button
+                class="paper-btn"
+                onclick="openPaper('2024-S-1')">
+
+                Start Paper
+
+            </button>
+
+        </div>
+
+
+
+        <!-- PAPER 6 -->
+
+        <div class="paper-card">
+
+            <div class="paper-info">
+
+                <h3>
+                    UPSSSC PET — 2024 — Shift 2
+                </h3>
+
+                <p>
+                    Previous Year Question Paper
+                </p>
+
+            </div>
+
+            <button
+                class="paper-btn"
+                onclick="openPaper('2024-S-2')">
+
+                Start Paper
+
+            </button>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- BACK BUTTON -->
+
+    <a href="upsssc.html" class="back-btn">
+        ← Back to UPSSSC Exams
+    </a>
+
+
+</main>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    © 2026 ExamQuizHub | UPSSSC PET
+
+</footer>
+
+
+
+<script>
+
+    function openPaper(paper) {
+
+        if (paper === '06-sep-25-S-1') {
+
+            window.location.href =
+                'upsssc-petp6-sep-25-s-1.html';
+
+        }
+
+        else {
+
+            alert(
+                'यह Question Paper अभी बनाया नहीं गया है।'
+            );
+
+        }
+
+    }
+
+</script>
+
+
+</body>
+
+</html>
+```

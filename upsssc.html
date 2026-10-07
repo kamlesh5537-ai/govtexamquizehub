@@ -1,0 +1,459 @@
+```html
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>UPSSSC Exams | ExamQuizHub</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #222;
+        }
+
+        /* HEADER */
+
+        .header {
+            background: linear-gradient(135deg, #673ab7, #3f51b5);
+            color: white;
+            text-align: center;
+            padding: 30px 15px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        .header p {
+            margin: 8px 0 0;
+            font-size: 17px;
+        }
+
+        /* MAIN */
+
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 15px;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .title h2 {
+            margin-bottom: 8px;
+        }
+
+        .title p {
+            color: #555;
+        }
+
+        /* EXAM GRID */
+
+        .exam-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+
+            gap: 18px;
+        }
+
+        /* CARD */
+
+        .exam-card {
+            background: white;
+
+            border-radius: 12px;
+
+            padding: 22px 15px;
+
+            text-align: center;
+
+            box-shadow:
+                0 4px 12px rgba(0,0,0,0.10);
+
+            transition: 0.3s;
+        }
+
+        .exam-card:hover {
+
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 7px 18px rgba(0,0,0,0.15);
+        }
+
+        .exam-card h3 {
+
+            margin: 5px 0 12px;
+
+            font-size: 19px;
+        }
+
+        .exam-card p {
+
+            color: #666;
+
+            font-size: 14px;
+
+            min-height: 40px;
+        }
+
+        /* BUTTON */
+
+        .exam-card button {
+
+            border: none;
+
+            background: #3f51b5;
+
+            color: white;
+
+            padding: 11px 22px;
+
+            border-radius: 7px;
+
+            cursor: pointer;
+
+            font-size: 15px;
+        }
+
+        .exam-card button:hover {
+
+            background: #283593;
+        }
+
+        /* BACK BUTTON */
+
+        .back-btn {
+
+            display: block;
+
+            width: 180px;
+
+            margin: 30px auto;
+
+            padding: 12px;
+
+            text-align: center;
+
+            background: #222;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 7px;
+        }
+
+        .back-btn:hover {
+
+            background: #000;
+        }
+
+        /* FOOTER */
+
+        footer {
+
+            text-align: center;
+
+            padding: 20px;
+
+            margin-top: 30px;
+
+            background: #222;
+
+            color: white;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header class="header">
+
+    <h1>ExamQuizHub</h1>
+
+    <p>
+        UPSSSC Government Exam Papers & Mock Tests
+    </p>
+
+</header>
+
+
+
+<!-- MAIN -->
+
+<main class="container">
+
+
+    <div class="title">
+
+        <h2>📚 UPSSSC Exams</h2>
+
+        <p>
+            अपनी परीक्षा चुनें और Previous Papers तथा
+            Mock Test की तैयारी करें।
+        </p>
+
+    </div>
+
+
+
+    <div class="exam-grid">
+
+
+        <!-- PET -->
+
+        <div class="exam-card">
+
+            <h3>UPSSSC PET</h3>
+
+            <p>
+                Preliminary Eligibility Test
+            </p>
+
+            <button
+                onclick="location.href='upsssc-pet.html'">
+
+                View Papers
+
+            </button>
+
+        </div>
+
+
+
+        <!-- JUNIOR ASSISTANT -->
+
+        <div class="exam-card">
+
+            <h3>Junior Assistant</h3>
+
+            <p>
+                Junior Assistant Previous Papers
+                & Mock Tests
+            </p>
+
+            <button
+                onclick="showMessage('Junior Assistant')">
+
+                View Papers
+
+            </button>
+
+        </div>
+
+
+
+        <!-- LEKHPAL -->
+
+        <div class="exam-card">
+
+            <h3>UPSSSC Lekhpal</h3>
+
+            <p>
+                Revenue Lekhpal Previous Papers
+                & Mock Tests
+            </p>
+
+            <button
+                onclick="showMessage('Lekhpal')">
+
+                View Papers
+
+            </button>
+
+        </div>
+
+
+
+        <!-- VDO -->
+
+        <div class="exam-card">
+
+            <h3>UPSSSC VDO</h3>
+
+            <p>
+                Village Development Officer
+                Papers & Mock Tests
+            </p>
+
+            <button
+                onclick="showMessage('VDO')">
+
+                View Papers
+
+            </button>
+
+        </div>
+
+
+
+        <!-- STENOGRAPHER -->
+
+        <div class="exam-card">
+
+            <h3>UPSSSC Stenographer</h3>
+
+            <p>
+                Stenographer Previous Papers
+                & Mock Tests
+            </p>
+
+            <button
+                onclick="showMessage('Stenographer')">
+
+                View Papers
+
+            </button>
+
+        </div>
+
+
+
+        <!-- ASSISTANT ACCOUNTANT -->
+
+        <div class="exam-card">
+
+            <h3>Assistant Accountant</h3>
+
+            <p>
+                Assistant Accountant Papers
+                & Mock Tests
+            </p>
+
+            <button
+                onclick="showMessage('Assistant Accountant')">
+
+                View Papers
+
+            </button>
+
+        </div>
+
+
+
+        <!-- JUNIOR ANALYST -->
+
+        <div class="exam-card">
+
+            <h3>Junior Analyst</h3>
+
+            <p>
+                Junior Analyst Previous Papers
+                & Mock Tests
+            </p>
+
+            <button
+                onclick="showMessage('Junior Analyst')">
+
+                View Papers
+
+            </button>
+
+        </div>
+
+
+
+        <!-- ENFORCEMENT CONSTABLE -->
+
+        <div class="exam-card">
+
+            <h3>Enforcement Constable</h3>
+
+            <p>
+                Enforcement Constable
+                Previous Papers & Mock Tests
+            </p>
+
+            <button
+                onclick="showMessage('Enforcement Constable')">
+
+                View Papers
+
+            </button>
+
+        </div>
+
+
+
+        <!-- X-RAY TECHNICIAN -->
+
+        <div class="exam-card">
+
+            <h3>X-Ray Technician</h3>
+
+            <p>
+                X-Ray Technician
+                Previous Papers & Mock Tests
+            </p>
+
+            <button
+                onclick="showMessage('X-Ray Technician')">
+
+                View Papers
+
+            </button>
+
+        </div>
+
+
+
+    </div>
+
+
+    <!-- BACK BUTTON -->
+
+    <a href="index.html" class="back-btn">
+        ← Home पर जाएँ
+    </a>
+
+
+</main>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    © 2026 ExamQuizHub
+    <br>
+    UPSSSC Government Exam Preparation
+
+</footer>
+
+
+
+<script>
+
+function showMessage(examName) {
+
+    alert(
+        examName +
+        " का page अभी तैयार न
+```
